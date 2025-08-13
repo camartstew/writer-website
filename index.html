@@ -1,621 +1,605 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2575.7">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Writer & Editor</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            line-height: 1.7;
+            color: #2d3748;
+            background: #ffffff;
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        header {
+            padding: 60px 0 40px;
+            border-bottom: 1px solid #e2e8f0;
+            margin-bottom: 60px;
+        }
+
+        .header-content {
+            text-align: center;
+        }
+
+        .profile-image {
+            width: 280px;
+            height: 380px;
+            background: linear-gradient(135deg, #f7fafc, #edf2f7);
+            margin: 0 auto 40px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: #4299e1;
+            border: 1px solid #e2e8f0;
+        }
+
+        .name {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #1a202c;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+
+        .bio {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #4a5568;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .bio p {
+            margin-bottom: 24px;
+        }
+
+        .bio a {
+            color: #4299e1;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-bottom-color 0.2s ease;
+        }
+
+        .bio a:hover {
+            border-bottom-color: #4299e1;
+        }
+
+        /* Services Section */
+        .services {
+            margin-bottom: 80px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1a202c;
+            margin-bottom: 32px;
+            letter-spacing: -0.01em;
+        }
+
+        .services-list {
+            display: grid;
+            gap: 24px;
+        }
+
+        .service-item {
+            padding: 32px;
+            background: #f7fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .service-item:hover {
+            background: #edf2f7;
+            border-color: #cbd5e0;
+        }
+
+        .service-name {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #1a202c;
+            margin-bottom: 12px;
+        }
+
+        .service-description {
+            color: #4a5568;
+            line-height: 1.6;
+        }
+
+        /* Publications Section */
+        .publications {
+            margin-bottom: 80px;
+        }
+
+        .category {
+            margin-bottom: 48px;
+        }
+
+        .category-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #1a202c;
+            margin-bottom: 24px;
+            letter-spacing: -0.01em;
+        }
+
+        .publication-list {
+            display: grid;
+            gap: 16px;
+        }
+
+        .publication {
+            padding-bottom: 16px;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .publication:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .publication-title {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #1a202c;
+            margin-bottom: 8px;
+        }
+
+        .publication-title a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .publication-title a:hover {
+            color: #4299e1;
+        }
+
+        .publication-meta {
+            font-size: 0.95rem;
+            color: #718096;
+            margin-bottom: 8px;
+        }
+
+        .publication-description {
+            font-size: 0.95rem;
+            color: #4a5568;
+            line-height: 1.6;
+        }
+
+        /* Contact Section */
+        .contact {
+            margin-bottom: 60px;
+            padding: 48px 0;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .contact-intro {
+            font-size: 1.1rem;
+            color: #4a5568;
+            margin-bottom: 32px;
+            line-height: 1.7;
+        }
+
+        .contact-methods {
+            display: grid;
+            gap: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-size: 1rem;
+        }
+
+        .contact-label {
+            font-weight: 500;
+            color: #1a202c;
+            min-width: 80px;
+        }
+
+        .contact-value {
+            color: #4a5568;
+        }
+
+        .contact-value a {
+            color: #4299e1;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .contact-value a:hover {
+            color: #3182ce;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            background: #f7fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 32px;
+            margin-top: 32px;
+        }
+
+        .form-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #1a202c;
+            margin-bottom: 24px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            font-weight: 500;
+            color: #1a202c;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #cbd5e0;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.2s ease;
+            background: white;
+        }
+
+        .form-input:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: #4299e1;
+            box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.1);
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-button {
+            background: #4299e1;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .form-button:hover {
+            background: #3182ce;
+        }
+
+        .form-button:active {
+            background: #2c5aa0;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            border-top: 1px solid #e2e8f0;
+            color: #718096;
+            font-size: 0.9rem;
+        }
+
+        .social-links {
+            margin-bottom: 20px;
+        }
+
+        .social-links a {
+            color: #4299e1;
+            text-decoration: none;
+            margin: 0 12px;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+        }
+
+        .social-links a:hover {
+            color: #3182ce;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+            }
+
+            header {
+                padding: 40px 0 32px;
+                margin-bottom: 48px;
+            }
+
+            .name {
+                font-size: 2rem;
+            }
+
+            .profile-image {
+                width: 240px;
+                height: 320px;
+                margin-bottom: 32px;
+            }
+
+            .bio {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.3rem;
+            }
+
+            .contact-methods {
+                gap: 16px;
+            }
+
+            .contact-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 4px;
+            }
+        }
+
+        /* Smooth animations */
+        * {
+            scroll-behavior: smooth;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
 <body>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html lang="en"&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;Your Name - Writer &amp; Editor&lt;/title&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>* {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin: 0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>box-sizing: border-box;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>line-height: 1.7;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #2d3748;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: #ffffff;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 16px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.container {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>max-width: 680px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin: 0 auto;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 0 24px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* Header */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>header {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 60px 0 40px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-bottom: 1px solid #e2e8f0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 60px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.header-content {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.profile-image {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>width: 280px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>height: 380px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: linear-gradient(135deg, #f7fafc, #edf2f7);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin: 0 auto 40px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 8px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>justify-content: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 3rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #4299e1;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid #e2e8f0;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.name {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 2.5rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 600;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #1a202c;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 16px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>letter-spacing: -0.02em;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.bio {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.1rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>line-height: 1.8;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #4a5568;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>max-width: 600px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin: 0 auto;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.bio p {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 24px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.bio a {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #4299e1;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-decoration: none;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-bottom: 1px solid transparent;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transition: border-bottom-color 0.2s ease;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.bio a:hover {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-bottom-color: #4299e1;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* Services Section */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.services {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 80px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.section-title {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.5rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 600;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #1a202c;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 32px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>letter-spacing: -0.01em;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.services-list {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: grid;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>gap: 24px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.service-item {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 32px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: #f7fafc;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid #e2e8f0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 8px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transition: all 0.2s ease;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.service-item:hover {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: #edf2f7;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-color: #cbd5e0;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.service-name {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.25rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 600;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #1a202c;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 12px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.service-description {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #4a5568;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>line-height: 1.6;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* Publications Section */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.publications {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 80px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.category {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 48px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.category-title {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.25rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 600;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #1a202c;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 24px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>letter-spacing: -0.01em;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.publication-list {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: grid;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>gap: 16px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.publication {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding-bottom: 16px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-bottom: 1px solid #f1f5f9;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.publication:last-child {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-bottom: none;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding-bottom: 0;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.publication-title {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.1rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 500;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #1a202c;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 8px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.publication-title a {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: inherit;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-decoration: none;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transition: color 0.2s ease;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.publication-title a:hover {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #4299e1;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.publication-meta {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.95rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #718096;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 8px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.publication-description {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.95rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #4a5568;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>line-height: 1.6;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* Contact Section */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.contact {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 60px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 48px 0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-top: 1px solid #e2e8f0;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.contact-intro {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.1rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #4a5568;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 32px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>line-height: 1.7;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.contact-methods {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: grid;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>gap: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.contact-item {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>gap: 16px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1rem;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.contact-label {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 500;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #1a202c;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>min-width: 80px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.contact-value {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #4a5568;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.contact-value a {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #4299e1;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-decoration: none;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transition: color 0.2s ease;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.contact-value a:hover {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #3182ce;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* Contact Form */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.contact-form {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: #f7fafc;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid #e2e8f0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 8px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 32px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 32px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.form-title {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.25rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 600;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #1a202c;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 24px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.form-group {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.form-label {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: block;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 500;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #1a202c;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 8px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.95rem;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.form-input,</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.form-textarea {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 12px 16px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid #cbd5e0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 6px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-family: inherit;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transition: border-color 0.2s ease;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: white;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.form-input:focus,</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.form-textarea:focus {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>outline: none;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-color: #4299e1;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.1);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.form-textarea {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>resize: vertical;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>min-height: 120px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.form-button {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: #4299e1;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: white;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border: none;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 12px 24px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 6px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 500;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>cursor: pointer;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transition: background-color 0.2s ease;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.form-button:hover {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: #3182ce;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.form-button:active {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: #2c5aa0;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* Footer */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>footer {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 40px 0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-top: 1px solid #e2e8f0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #718096;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.9rem;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.social-links {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.social-links a {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #4299e1;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-decoration: none;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin: 0 12px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.95rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transition: color 0.2s ease;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.social-links a:hover {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #3182ce;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* Responsive Design */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>@media (max-width: 768px) {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>.container {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>padding: 0 20px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">            </span>header {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>padding: 40px 0 32px;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>margin-bottom: 48px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">            </span>.name {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>font-size: 2rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">            </span>.profile-image {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>width: 240px;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>height: 320px;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>margin-bottom: 32px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">            </span>.bio {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>font-size: 1rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">            </span>.section-title {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>font-size: 1.3rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">            </span>.contact-methods {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>gap: 16px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">            </span>.contact-item {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>flex-direction: column;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>align-items: flex-start;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>gap: 4px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* Smooth animations */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>* {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>scroll-behavior: smooth;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.fade-in {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>opacity: 0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transform: translateY(20px);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transition: all 0.6s ease;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.fade-in.visible {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>opacity: 1;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transform: translateY(0);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="container"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;header&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="header-content fade-in"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="profile-image"&gt;📝&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;h1 class="name"&gt;Your Name&lt;/h1&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bio"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;I'm a writer and editor specializing in &lt;a href="#publications"&gt;narrative journalism&lt;/a&gt;, &lt;a href="#publications"&gt;personal essays&lt;/a&gt;, and editorial work. My writing has appeared in [Publication Names], and I help clients refine their personal statements and manuscripts through thoughtful editing and coaching.&lt;/p&gt;</p>
-<p class="p2"><span class="Apple-converted-space">                    </span></p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;I hold a [degree] from [University] and have [X] years of experience in publishing and editorial work. When I'm not writing or editing, I'm [personal interests that connect to your professional identity].&lt;/p&gt;</p>
-<p class="p2"><span class="Apple-converted-space">                    </span></p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;I'm currently accepting new projects for copy editing, personal statement coaching, and freelance writing assignments.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/header&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;main&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;section class="services fade-in"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;h2 class="section-title"&gt;Services&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="services-list"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="service-item"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h3 class="service-name"&gt;Copy Editing&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="service-description"&gt;Comprehensive editing for clarity, flow, and impact. I work with manuscripts, articles, and digital content to ensure your writing resonates with readers while maintaining your unique voice.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
-<p class="p2"><span class="Apple-converted-space">                    </span></p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="service-item"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h3 class="service-name"&gt;Personal Statement Coaching&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="service-description"&gt;One-on-one guidance for crafting compelling personal statements. From college applications to fellowship essays, I help you tell your story in a way that stands out to admissions committees and selection panels.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
-<p class="p2"><span class="Apple-converted-space">                    </span></p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="service-item"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h3 class="service-name"&gt;Freelance Writing&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="service-description"&gt;Custom content creation for publications, websites, and marketing materials. I specialize in narrative journalism, personal essays, and feature writing across diverse topics and audiences.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;section class="publications fade-in"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;h2 class="section-title"&gt;Published Work&lt;/h2&gt;</p>
-<p class="p2"><span class="Apple-converted-space">                </span></p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="category"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="category-title"&gt;Essays&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="publication-list"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="publication"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;h4 class="publication-title"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;a href="#"&gt;Your Essay Title Here&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/h4&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="publication-meta"&gt;Publication Name – 2024&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;p class="publication-description"&gt;Brief description of your essay, highlighting the main themes or impact. This should give readers a sense of your writing style and the topics you explore.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
-<p class="p2"><span class="Apple-converted-space">                        </span></p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="publication"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;h4 class="publication-title"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;a href="#"&gt;Another Essay Title&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/h4&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="publication-meta"&gt;Different Publication – 2023&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;p class="publication-description"&gt;Description of another piece, showing your range and expertise across different subjects or formats.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
-<p class="p2"><span class="Apple-converted-space">                        </span></p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="publication"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;h4 class="publication-title"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;a href="#"&gt;Third Essay Example&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/h4&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="publication-meta"&gt;Another Magazine – 2023&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;p class="publication-description"&gt;A third example demonstrating your consistent quality and diverse interests as a writer.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="category"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="category-title"&gt;Articles &amp; Features&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="publication-list"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="publication"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;h4 class="publication-title"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;a href="#"&gt;Feature Article Title&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/h4&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="publication-meta"&gt;Magazine Name – 2024&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;p class="publication-description"&gt;Description of your feature writing, highlighting your reporting skills and ability to tackle complex subjects.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
-<p class="p2"><span class="Apple-converted-space">                        </span></p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="publication"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;h4 class="publication-title"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;a href="#"&gt;Investigative Piece&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/h4&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="publication-meta"&gt;News Publication – 2023&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;p class="publication-description"&gt;Example of your investigative or research-driven work, showing your ability to handle different types of journalism.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="category"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="category-title"&gt;Reviews &amp; Cultural Commentary&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="publication-list"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="publication"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;h4 class="publication-title"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;a href="#"&gt;Book Review Title&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/h4&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="publication-meta"&gt;Literary Magazine – 2024&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;p class="publication-description"&gt;Example of your critical writing and cultural commentary work.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
-<p class="p2"><span class="Apple-converted-space">                        </span></p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="publication"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;h4 class="publication-title"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                                </span>&lt;a href="#"&gt;Cultural Analysis Piece&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/h4&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="publication-meta"&gt;Online Publication – 2023&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;p class="publication-description"&gt;Another example of your analytical and commentary writing.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;section class="contact fade-in"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;h2 class="section-title"&gt;Contact&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="contact-intro"&gt;I'm always interested in new writing projects and editing opportunities. Whether you need help with a personal statement, manuscript editing, or have a freelance writing assignment, I'd love to hear from you.&lt;/p&gt;</p>
-<p class="p2"><span class="Apple-converted-space">                </span></p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="contact-methods"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="contact-item"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;span class="contact-label"&gt;Email&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;span class="contact-value"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;a href="mailto:your.email@example.com"&gt;your.email@example.com&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
-<p class="p2"><span class="Apple-converted-space">                    </span></p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="contact-item"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;span class="contact-label"&gt;LinkedIn&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;span class="contact-value"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;a href="https://linkedin.com/in/yourprofile" target="_blank"&gt;linkedin.com/in/yourprofile&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
-<p class="p2"><span class="Apple-converted-space">                    </span></p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="contact-item"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;span class="contact-label"&gt;Phone&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;span class="contact-value"&gt;(555) 123-4567&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="contact-form"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="form-title"&gt;Get in Touch&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;form&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="form-group"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;label for="name" class="form-label"&gt;Name&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;input type="text" id="name" name="name" class="form-input" required&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
-<p class="p2"><span class="Apple-converted-space">                        </span></p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="form-group"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;label for="email" class="form-label"&gt;Email&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;input type="email" id="email" name="email" class="form-input" required&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
-<p class="p2"><span class="Apple-converted-space">                        </span></p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="form-group"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;label for="project" class="form-label"&gt;Project Type&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;input type="text" id="project" name="project" class="form-input" placeholder="e.g., Copy editing, Personal statement, Freelance writing"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
-<p class="p2"><span class="Apple-converted-space">                        </span></p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="form-group"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;label for="message" class="form-label"&gt;Message&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;textarea id="message" name="message" class="form-textarea" placeholder="Tell me about your project and timeline..." required&gt;&lt;/textarea&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
-<p class="p2"><span class="Apple-converted-space">                        </span></p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;button type="submit" class="form-button"&gt;Send Message&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/form&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/section&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/main&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;footer&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="social-links"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;a href="https://twitter.com/yourusername" target="_blank"&gt;Twitter&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;a href="https://linkedin.com/in/yourprofile" target="_blank"&gt;LinkedIn&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;a href="mailto:your.email@example.com"&gt;Email&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;&amp;copy; 2025 Your Name. All rights reserved.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/footer&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>// Fade-in animations on scroll</p>
-<p class="p1"><span class="Apple-converted-space">        </span>const observerOptions = {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>threshold: 0.1,</p>
-<p class="p1"><span class="Apple-converted-space">            </span>rootMargin: '0px 0px -50px 0px'</p>
-<p class="p1"><span class="Apple-converted-space">        </span>};</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>const observer = new IntersectionObserver((entries) =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>entries.forEach(entry =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>if (entry.isIntersecting) {</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>entry.target.classList.add('visible');</p>
-<p class="p1"><span class="Apple-converted-space">                </span>}</p>
-<p class="p1"><span class="Apple-converted-space">            </span>});</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}, observerOptions);</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>document.querySelectorAll('.fade-in').forEach(el =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>observer.observe(el);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>});</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>// Form submission</p>
-<p class="p1"><span class="Apple-converted-space">        </span>document.querySelector('form').addEventListener('submit', function(e) {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>e.preventDefault();</p>
-<p class="p1"><span class="Apple-converted-space">            </span>alert('Thank you for your message! I\'ll get back to you soon.');</p>
-<p class="p1"><span class="Apple-converted-space">            </span>this.reset();</p>
-<p class="p1"><span class="Apple-converted-space">        </span>});</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>// Smooth scrolling for anchor links</p>
-<p class="p1"><span class="Apple-converted-space">        </span>document.querySelectorAll('a[href^="#"]').forEach(anchor =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>anchor.addEventListener('click', function (e) {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>e.preventDefault();</p>
-<p class="p1"><span class="Apple-converted-space">                </span>const target = document.querySelector(this.getAttribute('href'));</p>
-<p class="p1"><span class="Apple-converted-space">                </span>if (target) {</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>target.scrollIntoView({</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>behavior: 'smooth',</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>block: 'start'</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>});</p>
-<p class="p1"><span class="Apple-converted-space">                </span>}</p>
-<p class="p1"><span class="Apple-converted-space">            </span>});</p>
-<p class="p1"><span class="Apple-converted-space">        </span>});</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
+    <div class="container">
+        <header>
+            <div class="header-content fade-in">
+                <div class="profile-image">📝</div>
+                <h1 class="name">Your Name</h1>
+                <div class="bio">
+                    <p>I'm a writer and editor specializing in <a href="#publications">narrative journalism</a>, <a href="#publications">personal essays</a>, and editorial work. My writing has appeared in [Publication Names], and I help clients refine their personal statements and manuscripts through thoughtful editing and coaching.</p>
+                    
+                    <p>I hold a [degree] from [University] and have [X] years of experience in publishing and editorial work. When I'm not writing or editing, I'm [personal interests that connect to your professional identity].</p>
+                    
+                    <p>I'm currently accepting new projects for copy editing, personal statement coaching, and freelance writing assignments.</p>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section class="services fade-in">
+                <h2 class="section-title">Services</h2>
+                <div class="services-list">
+                    <div class="service-item">
+                        <h3 class="service-name">Copy Editing</h3>
+                        <p class="service-description">Comprehensive editing for clarity, flow, and impact. I work with manuscripts, articles, and digital content to ensure your writing resonates with readers while maintaining your unique voice.</p>
+                    </div>
+                    
+                    <div class="service-item">
+                        <h3 class="service-name">Personal Statement Coaching</h3>
+                        <p class="service-description">One-on-one guidance for crafting compelling personal statements. From college applications to fellowship essays, I help you tell your story in a way that stands out to admissions committees and selection panels.</p>
+                    </div>
+                    
+                    <div class="service-item">
+                        <h3 class="service-name">Freelance Writing</h3>
+                        <p class="service-description">Custom content creation for publications, websites, and marketing materials. I specialize in narrative journalism, personal essays, and feature writing across diverse topics and audiences.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="publications fade-in">
+                <h2 class="section-title">Published Work</h2>
+                
+                <div class="category">
+                    <h3 class="category-title">Essays</h3>
+                    <div class="publication-list">
+                        <div class="publication">
+                            <h4 class="publication-title">
+                                <a href="#">Your Essay Title Here</a>
+                            </h4>
+                            <div class="publication-meta">Publication Name – 2024</div>
+                            <p class="publication-description">Brief description of your essay, highlighting the main themes or impact. This should give readers a sense of your writing style and the topics you explore.</p>
+                        </div>
+                        
+                        <div class="publication">
+                            <h4 class="publication-title">
+                                <a href="#">Another Essay Title</a>
+                            </h4>
+                            <div class="publication-meta">Different Publication – 2023</div>
+                            <p class="publication-description">Description of another piece, showing your range and expertise across different subjects or formats.</p>
+                        </div>
+                        
+                        <div class="publication">
+                            <h4 class="publication-title">
+                                <a href="#">Third Essay Example</a>
+                            </h4>
+                            <div class="publication-meta">Another Magazine – 2023</div>
+                            <p class="publication-description">A third example demonstrating your consistent quality and diverse interests as a writer.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="category">
+                    <h3 class="category-title">Articles & Features</h3>
+                    <div class="publication-list">
+                        <div class="publication">
+                            <h4 class="publication-title">
+                                <a href="#">Feature Article Title</a>
+                            </h4>
+                            <div class="publication-meta">Magazine Name – 2024</div>
+                            <p class="publication-description">Description of your feature writing, highlighting your reporting skills and ability to tackle complex subjects.</p>
+                        </div>
+                        
+                        <div class="publication">
+                            <h4 class="publication-title">
+                                <a href="#">Investigative Piece</a>
+                            </h4>
+                            <div class="publication-meta">News Publication – 2023</div>
+                            <p class="publication-description">Example of your investigative or research-driven work, showing your ability to handle different types of journalism.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="category">
+                    <h3 class="category-title">Reviews & Cultural Commentary</h3>
+                    <div class="publication-list">
+                        <div class="publication">
+                            <h4 class="publication-title">
+                                <a href="#">Book Review Title</a>
+                            </h4>
+                            <div class="publication-meta">Literary Magazine – 2024</div>
+                            <p class="publication-description">Example of your critical writing and cultural commentary work.</p>
+                        </div>
+                        
+                        <div class="publication">
+                            <h4 class="publication-title">
+                                <a href="#">Cultural Analysis Piece</a>
+                            </h4>
+                            <div class="publication-meta">Online Publication – 2023</div>
+                            <p class="publication-description">Another example of your analytical and commentary writing.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="contact fade-in">
+                <h2 class="section-title">Contact</h2>
+                <p class="contact-intro">I'm always interested in new writing projects and editing opportunities. Whether you need help with a personal statement, manuscript editing, or have a freelance writing assignment, I'd love to hear from you.</p>
+                
+                <div class="contact-methods">
+                    <div class="contact-item">
+                        <span class="contact-label">Email</span>
+                        <span class="contact-value">
+                            <a href="mailto:your.email@example.com">your.email@example.com</a>
+                        </span>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <span class="contact-label">LinkedIn</span>
+                        <span class="contact-value">
+                            <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a>
+                        </span>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <span class="contact-label">Phone</span>
+                        <span class="contact-value">(555) 123-4567</span>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h3 class="form-title">Get in Touch</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" id="name" name="name" class="form-input" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" id="email" name="email" class="form-input" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="project" class="form-label">Project Type</label>
+                            <input type="text" id="project" name="project" class="form-input" placeholder="e.g., Copy editing, Personal statement, Freelance writing">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea id="message" name="message" class="form-textarea" placeholder="Tell me about your project and timeline..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="form-button">Send Message</button>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="social-links">
+                <a href="https://twitter.com/yourusername" target="_blank">Twitter</a>
+                <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+                <a href="mailto:your.email@example.com">Email</a>
+            </div>
+            <p>&copy; 2025 Your Name. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Fade-in animations on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Form submission
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! I\'ll get back to you soon.');
+            this.reset();
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
