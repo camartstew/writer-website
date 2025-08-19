@@ -1,570 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Writer & Editor</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Avenir Next', 'Avenir', 'Century Gothic', sans-serif;
-            line-height: 1.7;
-            color: #2d3748;
-            background: #ffffff;
-            font-size: 16px;
-        }
-
-        .container {
-            max-width: 680px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        /* Header */
-        header {
-            padding: 60px 0 40px;
-            border-bottom: 1px solid #e2e8f0;
-            margin-bottom: 60px;
-        }
-
-        .header-content {
-            text-align: left;
-        }
-
-        .profile-image {
-            width: 280px;
-            height: 380px;
-            background: linear-gradient(135deg, #f7fafc, #edf2f7);
-            margin: 0 0 40px 0;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            color: #4299e1;
-            border: 1px solid #e2e8f0;
-            float: left;
-            margin-right: 40px;
-        }
-
-        .name {
-            font-size: 2.5rem;
-            font-weight: 600;
-            color: #1a202c;
-            margin-bottom: 16px;
-            letter-spacing: -0.02em;
-        }
-
-        .bio {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #4a5568;
-            max-width: none;
-            margin: 0;
-            overflow: hidden;
-        }
-
-        .bio p {
-            margin-bottom: 24px;
-        }
-
-        .bio a {
-            color: #002FA7;
-            text-decoration: none;
-            border-bottom: 1px solid transparent;
-            transition: border-bottom-color 0.2s ease;
-        }
-
-        .bio a:hover {
-            border-bottom-color: #002FA7;
-        }
-
-        /* Services Section */
-        .services {
-            margin-bottom: 80px;
-        }
-
-        .section-title {
-            font-size: 3.2rem;
-            font-weight: 600;
-            color: #1a202c;
-            margin-bottom: 40px;
-            letter-spacing: -0.02em;
-        }
-
-        .services-list {
-            display: grid;
-            gap: 32px;
-        }
-
-        .service-item {
-            margin-bottom: 24px;
-        }
-
-        .service-name {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: #1a202c;
-            margin-bottom: 12px;
-        }
-
-        .service-description {
-            color: #4a5568;
-            line-height: 1.6;
-            margin-bottom: 16px;
-        }
-        /* Leadership Section */
-        .leadership {
-            margin-bottom: 80px;
-        }
-
-        .leadership-list {
-            display: grid;
-            gap: 32px;
-        }
-
-        .leadership-item {
-            margin-bottom: 24px;
-        }
-
-        .leadership-name {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: #1a202c;
-            margin-bottom: 12px;
-        }
-
-        .leadership-description {
-            color: #4a5568;
-            line-height: 1.6;
-            margin-bottom: 16px;
-        }
-
-        /* Publications Section */
-        .publications {
-            margin-bottom: 80px;
-            text-align: right;
-        }
-
-        .publications .section-title {
-            text-align: right;
-        }
-
-        .category {
-            margin-bottom: 48px;
-        }
-
-        .category-title {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: #1a202c;
-            margin-bottom: 24px;
-            letter-spacing: -0.01em;
-        }
-
-        .publication-list {
-            display: grid;
-            gap: 16px;
-        }
-
-        .publication {
-            padding-bottom: 16px;
-            border-bottom: 1px solid #f1f5f9;
-        }
-
-        .publication:last-child {
-            border-bottom: none;
-            padding-bottom: 0;
-        }
-
-        .publication-title {
-            font-size: 1.1rem;
-            font-weight: 500;
-            color: #1a202c;
-            margin-bottom: 8px;
-        }
-
-        .publication-title a {
-            color: inherit;
-            text-decoration: none;
-            transition: color 0.2s ease;
-        }
-
-        .publication-title a:hover {
-            color: #002FA7;
-        }
-
-        .publication-meta {
-            font-size: 0.95rem;
-            color: #718096;
-            margin-bottom: 8px;
-        }
-
-        .publication-description {
-            font-size: 0.95rem;
-            color: #4a5568;
-            line-height: 1.6;
-        }
-
-        /* Contact Section */
-        .contact {
-            margin-bottom: 60px;
-            padding: 48px 0;
-            border-top: 1px solid #e2e8f0;
-        }
-
-        .contact-intro {
-            font-size: 1.1rem;
-            color: #4a5568;
-            margin-bottom: 32px;
-            line-height: 1.7;
-        }
-
-        .contact-methods {
-            display: grid;
-            gap: 20px;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            font-size: 1rem;
-        }
-
-        .contact-label {
-            font-weight: 500;
-            color: #1a202c;
-            min-width: 80px;
-        }
-
-        .contact-value {
-            color: #4a5568;
-        }
-
-        .contact-value a {
-            color: #002FA7;
-            text-decoration: none;
-            transition: color 0.2s ease;
-        }
-
-        .contact-value a:hover {
-            color: #001a5c;
-        }
-
-        /* Contact Form */
-        .contact-form {
-            background: #f7fafc;
-            border: 1px solid #e2e8f0;
-            border-radius: 8px;
-            padding: 32px;
-            margin-top: 32px;
-        }
-
-        .form-title {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: #1a202c;
-            margin-bottom: 24px;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-label {
-            display: block;
-            font-weight: 500;
-            color: #1a202c;
-            margin-bottom: 8px;
-            font-size: 0.95rem;
-        }
-
-        .form-input,
-        .form-textarea {
-            width: 100%;
-            padding: 12px 16px;
-            border: 1px solid #cbd5e0;
-            border-radius: 6px;
-            font-size: 1rem;
-            font-family: inherit;
-            transition: border-color 0.2s ease;
-            background: white;
-        }
-
-        .form-input:focus,
-        .form-textarea:focus {
-            outline: none;
-            border-color: #4299e1;
-            box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.1);
-        }
-
-        .form-textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        .form-button {
-            background: #4299e1;
-            color: white;
-            border: none;
-            padding: 12px 24px;
-            border-radius: 6px;
-            font-size: 1rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: background-color 0.2s ease;
-        }
-
-        .form-button:hover {
-            background: #3182ce;
-        }
-
-        .form-button:active {
-            background: #2c5aa0;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 40px 0;
-            border-top: 1px solid #e2e8f0;
-            color: #718096;
-            font-size: 0.9rem;
-        }
-
-        .social-links {
-            margin-bottom: 20px;
-        }
-
-        .social-links a {
-            color: #002FA7;
-            text-decoration: none;
-            margin: 0 12px;
-            font-size: 0.95rem;
-            transition: color 0.2s ease;
-        }
-
-        .social-links a:hover {
-            color: #001a5c;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .container {
-                padding: 0 20px;
-            }
-
-            header {
-                padding: 40px 0 32px;
-                margin-bottom: 48px;
-            }
-
-            .name {
-                font-size: 2rem;
-            }
-
-            .profile-image {
-                width: 240px;
-                height: 320px;
-                margin-bottom: 32px;
-                float: none;
-                margin-right: 0;
-            }
-
-            .bio {
-                font-size: 1rem;
-            }
-
-            .section-title {
-                font-size: 1.3rem;
-            }
-
-            .contact-methods {
-                gap: 16px;
-            }
-
-            .contact-item {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 4px;
-            }
-        }
-
-        /* Smooth animations */
-        * {
-            scroll-behavior: smooth;
-        }
-
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.6s ease;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cameron Stewart — Writer & Editor</title>
+  <meta name="description" content="Cameron Stewart is a Brooklyn-based writer and educator offering personal statement coaching, copy editing, and freelance writing." />
+  <link rel="icon" href="/favicon.ico" />
+  <meta name="theme-color" content="#ffffff" />
+  <style>
+    /* --- Design tokens --- */
+    :root{
+      --bg:#ffffff;            /* white */
+      --text:#111111;          /* near-black for strong contrast */
+      --muted:#4a5568;         /* subtle gray for secondary text */
+      --line:#e5e7eb;          /* light divider */
+      --klein:#002FA7;         /* Klein blue */
+      --klein-2:#4299e1;       /* lighter blue for focus/hover */
+      --card:#f7fafc;          /* soft panel background */
+      --maxw: 980px;           /* page max width */
+    }
+
+    /* Base */
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--text);font-size:16px;line-height:1.75;font-family:'Avenir Next','Avenir','Century Gothic',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif}
+    .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+    a{color:var(--klein);text-decoration:none;background-image:linear-gradient(var(--klein),var(--klein));background-position:0 100%;background-size:0% 2px;background-repeat:no-repeat;transition:background-size .2s ease}
+a:hover, a:focus-visible{background-size:100% 2px;outline:none}
+
+    /* Top hero */
+    header{padding:10vh 0 6vh;border-bottom:1px solid var(--line)}
+    .name{font-size:clamp(2.5rem,12vw,6.5rem);letter-spacing:-.02em;line-height:1.05;margin:0 0 24px}
+    .hero{display:grid;grid-template-columns: 260px 1fr;gap:36px;align-items:start}
+    .photo{width:260px;height:340px;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:linear-gradient(135deg,#f7fafc,#edf2f7);display:flex;align-items:center;justify-content:center}
+    .photo img{width:100%;height:100%;object-fit:cover;display:block}
+    .lede{font-size:1.05rem;color:var(--text);margin:0}
+    .lede p{margin:0 0 16px}
+
+    /* Two-column body */
+    main{padding:48px 0}
+    .grid{display:grid;grid-template-columns: 1fr 1fr;gap:48px}
+    .section-title{font-weight:700;letter-spacing:-.01em;margin:0 0 14px}
+    .section-title.small{font-size:1.15rem;color:var(--muted)}
+
+    /* Services */
+    .services .card{padding:16px;border:1px solid var(--line);border-radius:10px;background:var(--card)}
+    .services h3{margin:0 0 6px;font-size:1.05rem}
+    .services p{margin:0;color:var(--muted)}
+    .services .stack{display:grid;gap:14px}
+
+    /* Publications */
+    .pubs .item{padding:12px 0;border-bottom:1px solid var(--line)}
+    .pubs .item:last-child{border-bottom:none}
+    .pub-title{margin:0 0 6px;font-weight:600}
+    .pub-meta{margin:0 0 6px;color:var(--muted);font-size:.95rem}
+    .pub-desc{margin:0;color:var(--muted)}
+
+    /* Contact */
+    .contact{border-top:1px solid var(--line);margin-top:56px;padding-top:32px}
+    .rows{display:grid;gap:10px;margin:12px 0}
+    .row{display:flex;gap:10px;align-items:center}
+    .label{min-width:84px;font-weight:700}
+
+    /* Form (optional keep) */
+    .form{margin-top:12px}
+    .form-group{margin-bottom:12px}
+    label{display:block;font-weight:600;margin:0 0 6px}
+    input,textarea{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;background:#fff;color:inherit;font-family:inherit}
+    input:focus,textarea:focus{outline:none;border-color:var(--klein-2);box-shadow:0 0 0 3px rgba(66,153,225,.15)}
+    textarea{min-height:120px;resize:vertical}
+    .btn{appearance:none;border:none;border-radius:8px;padding:12px 18px;background:var(--klein-2);color:#fff;font-weight:700;cursor:pointer}
+    .btn:hover{filter:brightness(.96)}
+    .status{margin-top:8px;color:var(--muted)}
+
+    /* Responsive */
+    @media (max-width: 900px){
+      .hero{grid-template-columns:1fr}
+      .photo{width:100%;height:340px}
+      .grid{grid-template-columns:1fr}
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="header-content fade-in">
-                <div class="profile-image">📝</div>
-                <h1 class="name">Cameron Stewart</h1>
-                <div class="bio">
-                    <p>Cameron Stewart is a writer and educator based in Brooklyn. His work has appeared in Tin House and EPOCH Magazine, among others, and he has received fellowships from the Sewanee Writers' Conference and Columbia University's School of the Arts.</p>
-                    
-                    <p>As an editor, Cameron has over a decade of experience providing customized writing support. Through personalized edits and private tutoring, he has helped thousands of clients find their voices as writers. He is currently accepting new projects for copy editing, personal statement coaching, and freelance writing assignments.</p>
-                </div>
-            </div>
-        </header>
+  <a class="visually-hidden" href="#content">Skip to content</a>
 
-        <main>
-            <section class="services fade-in">
-                <h2 class="section-title">Services</h2>
-                <div class="services-list">
-                    <div class="service-item">
-                        <h3 class="service-name">Copy Editing</h3>
-                        <p class="service-description">Comprehensive editing for clarity, flow, and impact. I work with manuscripts, articles, and digital content to ensure your writing resonates with readers while maintaining your unique voice.</p>
-                    </div>
-                    
-                    <div class="service-item">
-                        <h3 class="service-name">Personal Statement Coaching</h3>
-                        <p class="service-description">One-on-one guidance for crafting compelling personal statements. From college applications to fellowship essays, I help you tell your story in a way that stands out to admissions committees and selection panels.</p>
-                    </div>
-                    
-                    <div class="service-item">
-                        <h3 class="service-name">Freelance Writing</h3>
-                        <p class="service-description">Custom content creation for publications, websites, and marketing materials. I specialize in narrative journalism, personal essays, and feature writing across diverse topics and audiences.</p>
-                    </div>
-                </div>
-            </section>
+  <header>
+    <div class="wrap">
+      <h1 class="name">Cameron Stewart</h1>
+      <div class="hero">
+        <figure class="photo" aria-label="Author photo">
+          <!-- Replace headshot.jpg with your image file path -->
+          <img src="headshot.jpg" alt="Cameron Stewart" />
+        </figure>
+        <div class="lede">
+          <p>Cameron Stewart is a writer and educator based in Brooklyn. His work has appeared in <em>Tin House</em> and <em>EPOCH Magazine</em>, among others, and he has received fellowships from the Sewanee Writers' Conference and Columbia University's School of the Arts.</p>
+          <p>As an editor, Cameron has over a decade of experience providing customized writing support. Through personalized edits and private tutoring, he has helped thousands of clients find their voices as writers. He is currently accepting new projects for copy editing, personal statement coaching, and freelance writing assignments.</p>
+        </div>
+      </div>
+    </div>
+  </header>
 
-            <section class="leadership fade-in">
-                <h2 class="section-title">Leadership & Programs</h2>
-                <div class="leadership-list">
-                    <div class="leadership-item">
-                        <h3 class="leadership-name">Kenan Scholars Program Manager</h3>
-                        <p class="leadership-description">Manage the college's largest grant focused on service work, creating initiatives that serve thousands of unhoused New Yorkers. Lead students through 240 hours annually of direct service providing meals, clothing, and housing resources, while mentoring them in designing their own nonprofit initiatives including art workshops and food waste reduction programs.</p>
-                    </div>
-                    
-                    <div class="leadership-item">
-                        <h3 class="leadership-name">Macaulay Story Lab Co-Director</h3>
-                        <p class="leadership-description">Spearhead recruitment and guide student storytellers through structured narrative development from concept to performance. Co-facilitate workshop series and lead production of public Story Slams for 200+ audiences. Develop and maintain digital archives showcasing student projects, promoting storytelling as a tool for identity-building and community connection.</p>
-                    </div>
-                </div>
-            </section>
+  <main id="content" class="wrap">
+    <div class="grid">
+      <!-- Left: Services -->
+      <section class="services" aria-labelledby="services-title">
+        <h2 class="section-title small" id="services-title">Services</h2>
+        <div class="stack">
+          <div class="card">
+            <h3>Personal Statement Coaching</h3>
+            <p>Hands‑on guidance to craft a focused, memorable narrative for college, graduate programs, and fellowships.</p>
+          </div>
+          <div class="card">
+            <h3>Copy Editing</h3>
+            <p>Line‑by‑line edits for clarity, tone, and flow while preserving your voice — ideal for manuscripts, essays, and web copy.</p>
+          </div>
+          <div class="card">
+            <h3>Freelance Writing</h3>
+            <p>Essays, features, and storytelling‑forward content for publications and organizations.</p>
+          </div>
+        </div>
+      </section>
 
-            <section class="publications fade-in">
-                <h2 class="section-title">Published Work</h2>
-                
-                <div class="category">
-                    <h3 class="category-title">Fiction</h3>
-                    <div class="publication-list">
-                        <div class="publication">
-                            <h4 class="publication-title">
-                                <a href="https://tinhouse.com/the-monk-dilemma/">The Monk Dilemma</a>
-                            </h4>
-                            <div class="publication-meta">Tin House – 2024</div>
-                            <p class="publication-description">A darkly humorous story about a town overrun with ex-monks who have fled their monasteries, exploring themes of faith, community, and spiritual crisis.</p>
-                        </div>
-                        
-                        <div class="publication">
-                            <h4 class="publication-title">
-                                <a href="https://www.joylandmagazine.com/regions/midwest/young-ronnie-mirror">Young Ronnie in The Mirror</a>
-                            </h4>
-                            <div class="publication-meta">Joyland Magazine – 2024</div>
-                            <p class="publication-description">A lyrical, surreal narrative following a character at the Air Bag Inn dealing with loneliness, relationships, and self-discovery.</p>
-                        </div>
-                        
-                        <div class="publication">
-                            <h4 class="publication-title">
-                                <a href="https://english.cornell.edu/news/681">Snow Globe Day Job</a>
-                            </h4>
-                            <div class="publication-meta">Literary Journal – 2024</div>
-                            <p class="publication-description">A compelling piece of short fiction exploring contemporary themes through vivid storytelling.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="contact fade-in">
-                <h2 class="section-title">Contact</h2>
-                <p class="contact-intro">I'm always interested in new writing projects and editing opportunities. Whether you need help with a personal statement, manuscript editing, or have a freelance writing assignment, I'd love to hear from you.</p>
-                
-                <div class="contact-methods">
-                    <div class="contact-item">
-                        <span class="contact-label">Email</span>
-                        <span class="contact-value">
-                            <a href="mailto:your.email@example.com">your.email@example.com</a>
-                        </span>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <span class="contact-label">LinkedIn</span>
-                        <span class="contact-value">
-                            <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a>
-                        </span>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <span class="contact-label">Phone</span>
-                        <span class="contact-value">(555) 123-4567</span>
-                    </div>
-                </div>
-            </section>
-        </main>
-
-        <footer>
-            <div class="social-links">
-                <a href="https://twitter.com/yourusername" target="_blank">Twitter</a>
-                <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
-                <a href="mailto:your.email@example.com">Email</a>
-            </div>
-            <p>&copy; 2025 Your Name. All rights reserved.</p>
-        </footer>
+      <!-- Right: Publications -->
+      <section class="pubs" aria-labelledby="pubs-title">
+        <h2 class="section-title small" id="pubs-title">Publications</h2>
+        <article class="item">
+          <h3 class="pub-title"><a href="https://english.cornell.edu/news/681" target="_blank" rel="noopener">Snow Globe Day Job</a></h3>
+          <p class="pub-meta">Cornell English Department</p>
+        </article>
+        <article class="item">
+          <h3 class="pub-title"><a href="https://tinhouse.com/the-monk-dilemma/" target="_blank" rel="noopener">The Monk Dilemma</a></h3>
+          <p class="pub-meta">Tin House</p>
+        </article>
+        <article class="item">
+          <h3 class="pub-title"><a href="https://www.joylandmagazine.com/regions/midwest/young-ronnie-mirror" target="_blank" rel="noopener">Young Ronnie in the Mirror</a></h3>
+          <p class="pub-meta">Joyland</p>
+        </article>
+        <article class="item">
+          <h3 class="pub-title">There Are Fewer Ways Out</h3>
+          <p class="pub-meta">The Baffler — forthcoming</p>
+        </article>
+      </section>
     </div>
 
-    <script>
-        // Fade-in animations on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+    <!-- Contact -->
+    <section class="contact" aria-labelledby="contact-title">
+      <h2 class="section-title small" id="contact-title">Contact</h2>
+      <div class="rows">
+        <div class="row"><div class="label">Email</div><div class="value"><a href="mailto:camartstew@gmail.com">camartstew@gmail.com</a></div></div>
+        <div class="row"><div class="label">LinkedIn</div><div class="value"><a href="https://www.linkedin.com/in/cameron-stewart-931b7458/" target="_blank" rel="noopener">linkedin.com/in/cameron-stewart-931b7458/</a></div></div>
+      </div>
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
+      <!-- Optional contact form (leave in for later; remove if not needed) -->
+      <form id="contact-form" class="form" novalidate>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" autocomplete="name" />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" />
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message"></textarea>
+        </div>
+        <button class="btn" type="submit">Send</button>
+        <p id="form-status" class="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
 
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
-        });
+  <footer class="wrap" style="padding:36px 0;color:var(--muted);text-align:center;border-top:1px solid var(--line)">
+    <p>&copy; <span id="year"></span> Cameron Stewart</p>
+  </footer>
 
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-    </script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Minimal form handler (placeholder only)
+    (function(){
+      const form=document.getElementById('contact-form');
+      if(!form) return;
+      const status=document.getElementById('form-status');
+      function setStatus(msg, ok=true){ if(!status) return; status.textContent=msg; status.style.color = ok ? '#2f855a' : '#c53030'; }
+      form.addEventListener('submit', (e)=>{
+        e.preventDefault();
+        setStatus('Thank you for your message! I\'ll get back to you soon.');
+        form.reset();
+      });
+    })();
+  </script>
 </body>
 </html>
