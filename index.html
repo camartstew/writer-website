@@ -111,8 +111,10 @@ a:hover,a:focus-visible{outline:none}
     /* Desktop: two-column layout for Services (left) and Publications (right) */
     /* Desktop: staggered flow — stack sections, but start Publications on the right */
     @media (min-width: 1100px){
-      .services{max-width: 700px; margin-right:auto;}
-      .pubs{max-width: 700px; margin-left:auto;}
+      /* Services: comfortable reading width on the left */
+      .services{max-width: 760px; margin-right:auto;}
+      /* Publications: hug the right edge; control left offset explicitly */
+      .pubs{width: calc(100% - 140px); max-width: none; margin-left:auto;}
     }
   </style>
 </head>
