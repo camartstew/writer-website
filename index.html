@@ -109,8 +109,10 @@ a:hover,a:focus-visible{outline:none}
       .grid{grid-template-columns:1fr}
     }
     /* Desktop: two-column layout for Services (left) and Publications (right) */
-    @media (min-width: 1000px){
-      .grid{grid-template-columns:1fr 1fr;align-items:start}
+    /* Desktop: staggered flow — stack sections, but start Publications on the right */
+    @media (min-width: 1100px){
+      .services{max-width: 700px; margin-right:auto;}
+      .pubs{max-width: 700px; margin-left:auto;}
     }
   </style>
 </head>
