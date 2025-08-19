@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://camartstew.github.io/writer-website/sitemap.xml
