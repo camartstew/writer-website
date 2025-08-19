@@ -25,8 +25,12 @@
     html{scroll-behavior:smooth}
     body{margin:0;background:var(--bg);color:var(--text);font-size:16px;line-height:1.75;font-family:'Avenir Next','Avenir','Century Gothic',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif}
     .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
-    a{color:var(--klein);text-decoration:none;background-image:linear-gradient(var(--klein),var(--klein));background-position:0 100%;background-size:0% 2px;background-repeat:no-repeat;transition:background-size .2s ease}
-a:hover, a:focus-visible{background-size:100% 2px;outline:none}
+    a{color:var(--text);text-decoration:none;background-image:none}
+a:hover,a:focus-visible{outline:none}
+
+/* Publications-only hover accent */
+.pubs a{color:var(--text);background-image:linear-gradient(var(--klein),var(--klein));background-position:0 100%;background-size:0% 2px;background-repeat:no-repeat;transition:background-size .2s ease, color .2s ease}
+.pubs a:hover,.pubs a:focus-visible{color:var(--klein);background-size:100% 2px}
 
     /* Top hero */
     header{padding:10vh 0 6vh;border-bottom:1px solid var(--line)}
@@ -82,8 +86,6 @@ a:hover, a:focus-visible{background-size:100% 2px;outline:none}
   </style>
 </head>
 <body>
-  <a class="visually-hidden" href="#content">Skip to content</a>
-
   <header>
     <div class="wrap">
       <h1 class="name">Cameron Stewart</h1>
