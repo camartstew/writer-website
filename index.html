@@ -67,7 +67,7 @@ a:hover,a:focus-visible{outline:none}
 
     /* Two-column body */
     main{padding:48px 0}
-    .grid{display:grid;grid-template-columns: 1fr 1fr;gap:clamp(56px,6vw,96px)}
+    .grid{display:grid;grid-template-columns:1fr;gap:clamp(56px,6vw,96px)}
     .section-title{font-weight:700;letter-spacing:-.01em;margin:0 0 14px}
     .section-title.small{font-size:1.5rem;font-weight:800;color:var(--text)}
 
@@ -78,6 +78,7 @@ a:hover,a:focus-visible{outline:none}
     .services .stack{display:grid;gap:24px}
 
     /* Publications */
+    .pubs{border-top:1px solid var(--line);padding-top:12px}
     .pubs .item{padding:18px 0;border-bottom:1px solid var(--line)}
     .pubs .item:last-child{border-bottom:none}
     .pub-title{margin:0 0 6px;font-weight:700;font-size:1.1rem}
@@ -133,13 +134,16 @@ a:hover,a:focus-visible{outline:none}
         <h2 class="section-title small" id="services-title">Services</h2>
         <div class="stack">
           <div class="card">
-            $1One-on-one guidance for crafting compelling personal statements. From college applications to fellowship essays, I help you tell your story in a way that stands out to admissions committees and selection panels.$3
+            <h3>Personal Statement Coaching</h3>
+            <p>One-on-one guidance for crafting compelling personal statements. From college applications to fellowship essays, I help you tell your story in a way that stands out to admissions committees and selection panels.</p>
           </div>
           <div class="card">
-            $1Comprehensive editing for clarity, flow, and impact. I work with manuscripts, articles, and digital content to ensure your writing resonates with readers while maintaining your unique voice.$3
+            <h3>Copy Editing</h3>
+            <p>Comprehensive editing for clarity, flow, and impact. I work with manuscripts, articles, and digital content to ensure your writing resonates with readers while maintaining your unique voice.</p>
           </div>
           <div class="card">
-            $1Custom content creation for publications, websites, and marketing materials. I specialize in narrative journalism, personal essays, and feature writing across diverse topics and audiences.$3
+            <h3>Freelance Writing</h3>
+            <p>Custom content creation for publications, websites, and marketing materials. I specialize in narrative journalism, personal essays, and feature writing across diverse topics and audiences.</p>
           </div>
         </div>
       </section>
