@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Services — Cameron Stewart</title>
+  <meta name="description" content="Personal statement coaching, copy editing, and freelance writing services by Cameron Stewart." />
+  <link rel="canonical" href="https://camartstew.github.io/writer-website/services.html" />
+  <meta name="theme-color" content="#ffffff" />
+  <style>
+    :root{
+      --bg:#ffffff;--text:#111111;--muted:#4a5568;--line:#e5e7eb;--klein:#002FA7;--klein-2:#4299e1;--card:#f7fafc;--maxw:980px
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--text);font-size:16px;line-height:1.75;font-family:'Avenir Next','Avenir','Century Gothic',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif}
+    a{color:var(--klein);text-decoration:none}
+    a:hover{opacity:.9}
+    .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+
+    /* Top bar */
+    .topbar{position:sticky;top:0;background:var(--bg);border-bottom:1px solid var(--line);z-index:10}
+    .topbar-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+    .brand{font-weight:800;letter-spacing:-.01em}
+    .nav a{margin-left:16px;color:var(--muted)}
+    .nav a:hover{color:var(--klein)}
+
+    /* Header */
+    header{padding:56px 0 28px;border-bottom:1px solid var(--line)}
+    .title{font-size:clamp(2.2rem,6vw,3rem);letter-spacing:-.02em;margin:0 0 8px}
+    .lede{margin:0;color:var(--muted)}
+
+    /* Sections */
+    section{padding:40px 0}
+    .section-title{font-size:2.2rem;font-weight:800;letter-spacing:-.01em;margin:0 0 18px}
+    .section-sub{font-size:1.2rem;color:var(--muted);margin:0 0 16px}
+
+    /* Service blocks */
+    .services{display:grid;gap:28px}
+    .service{padding:20px;border:1px solid var(--line);border-radius:10px;background:var(--card)}
+    .service h2{margin:0 0 6px;font-size:1.6rem}
+    .service p{margin:0;color:var(--text)}
+
+    /* Two-column details */
+    .two{display:grid;grid-template-columns:1fr 1fr;gap:36px}
+    @media (max-width:900px){.two{grid-template-columns:1fr}}
+
+    /* Publications-like link accent only on hover */
+    .accent-link{
+      color: var(--text);
+      background-image: linear-gradient(var(--klein), var(--klein));
+      background-position: 0 100%;
+      background-size: 0% 2px;
+      background-repeat: no-repeat;
+      transition: background-size .2s ease, color .2s ease;
+    }
+    .accent-link:hover,.accent-link:focus-visible{color:var(--klein);background-size:100% 2px;outline:none}
+
+    /* CTA */
+    .cta{padding:28px;border:1px solid var(--line);border-radius:10px;background:var(--card)}
+
+    footer{border-top:1px solid var(--line);padding:32px 0;color:var(--muted);text-align:center}
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="wrap topbar-inner">
+      <div class="brand"><a href="index.html" class="accent-link">Cameron Stewart</a></div>
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html#work">Published Work</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </div>
+
+  <header>
+    <div class="wrap">
+      <h1 class="title">Services</h1>
+      <p class="lede">Everything here stays in your voice. The reference is visual inspiration only—no language is copied. Below is a clear outline of what I do and how we’ll work together.</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section aria-labelledby="svc-overview">
+      <h2 id="svc-overview" class="section-title">Overview</h2>
+      <div class="services">
+        <article class="service">
+          <h2>Personal Statement Coaching</h2>
+          <p>One-on-one guidance for crafting compelling personal statements. From college applications to fellowship essays, I help you tell your story in a way that stands out to admissions committees and selection panels.</p>
+        </article>
+        <article class="service">
+          <h2>Copy Editing</h2>
+          <p>Comprehensive editing for clarity, flow, and impact. I work with manuscripts, articles, and digital content to ensure your writing resonates with readers while maintaining your unique voice.</p>
+        </article>
+        <article class="service">
+          <h2>Freelance Writing</h2>
+          <p>Custom content creation for publications, websites, and marketing materials. I specialize in narrative journalism, personal essays, and feature writing across diverse topics and audiences.</p>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="options">
+      <h2 id="options" class="section-title">Options</h2>
+      <div class="services">
+        <article class="service">
+          <h2>Personal Statement Coaching — Options</h2>
+          <p><strong>Sprint.</strong> One focused round to sharpen a single statement. You’ll get margin notes, a short revision plan, and an optional 30–45 minute session.</p>
+          <p><strong>Comprehensive.</strong> Two rounds across one or more statements, with a strategy memo that clarifies story, structure, and tone.</p>
+          <p><strong>Mentorship.</strong> Ongoing support over a season with scheduled check‑ins and iterative feedback.</p>
+        </article>
+        <article class="service">
+          <h2>Copy Editing — Options</h2>
+          <p><strong>Line Edit.</strong> Clarity, rhythm, and style at the sentence level while preserving your voice.</p>
+          <p><strong>Line + Light Developmental.</strong> Sentence‑level polish plus notes on structure, pacing, and emphasis.</p>
+          <p><strong>Manuscript Review.</strong> A deeper read culminating in a concise editorial letter and a prioritized roadmap.</p>
+        </article>
+        <article class="service">
+          <h2>Freelance Writing — Options</h2>
+          <p><strong>Commissioned Features & Essays.</strong> Reporting‑driven features and personal essays.</p>
+          <p><strong>Organizations & Sites.</strong> Clear, human copy for pages, newsletters, and announcements.</p>
+          <p><strong>Ongoing Support.</strong> A cadence for regular content with light editorial planning.</p>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="whatyouget">
+      <h2 id="whatyouget" class="section-title">What you’ll receive</h2>
+      <div class="two">
+        <div>
+          <h3 class="section-sub">For edits & coaching</h3>
+          <p>In‑document comments and suggested changes; a short plan that highlights what to keep, cut, and strengthen; and a brief written recap after our call.</p>
+        </div>
+        <div>
+          <h3 class="section-sub">Communication</h3>
+          <p>Clear timelines, email check‑ins between rounds, and optional live sessions. I keep the process simple and responsive.</p>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="process">
+      <h2 id="process" class="section-title">Process</h2>
+      <div class="two">
+        <div>
+          <h3 class="section-sub">1) Inquiry</h3>
+          <p>Share a brief note about your project and timeline. If helpful, include a short sample.</p>
+        </div>
+        <div>
+          <h3 class="section-sub">2) Scope & quote</h3>
+          <p>I’ll reply with a clear scope and a flat‑fee or hourly estimate, along with next steps and dates.</p>
+        </div>
+      </div>
+      <div class="two">
+        <div>
+          <h3 class="section-sub">3) Feedback</h3>
+          <p>You’ll receive edits and notes by the agreed date. We can add a live session to talk through revisions.</p>
+        </div>
+        <div>
+          <h3 class="section-sub">4) Follow‑up</h3>
+          <p>After your next draft, I’ll be available for quick questions and a final light pass as needed.</p>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="faq">
+      <h2 id="faq" class="section-title">FAQs</h2>
+      <div class="two">
+        <div>
+          <h3 class="section-sub">Timelines</h3>
+          <p>Turnarounds vary by scope. For most statements and essays, first feedback lands within a few business days. Larger manuscripts are scheduled to ensure quality and care.</p>
+        </div>
+        <div>
+          <h3 class="section-sub">Rates</h3>
+          <p>Rates depend on complexity and timeline. Share a sample and I’ll quote a clear flat fee or hourly estimate—no surprises.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title" class="section-title">Get in touch</h2>
+      <div class="cta">
+        <p>Email me to discuss your project and availability. I’m currently accepting new work.</p>
+        <p><a id="email-link" class="accent-link" href="#" rel="nofollow">Email Cameron</a> · <a class="accent-link" href="https://www.linkedin.com/in/cameron-stewart-931b7458/" target="_blank" rel="noopener">LinkedIn</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>&copy; <span id="year"></span> Cameron Stewart</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // Build email on the client to reduce scraping
+    (function(){
+      const link = document.getElementById('email-link');
+      if(!link) return;
+      const user = 'camartstew';
+      const domain = 'gmail.com';
+      const addr = user + '@' + domain;
+      const masked = user + ' [at] ' + domain.replace('.', ' [dot] ');
+      link.setAttribute('aria-label', masked);
+      link.addEventListener('click', function(e){ e.preventDefault(); window.location.href = 'mailto:' + addr; });
+    })();
+  </script>
+</body>
+</html>
